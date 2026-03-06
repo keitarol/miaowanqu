@@ -1,0 +1,321 @@
+/* 导航栏样式（淘宝链接高亮） */
+.nav {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9a6c;
+}
+.nav .logo span {
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 8px;
+}
+.nav ul {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.nav ul li a {
+    font-size: 16px;
+    color: #666;
+    transition: color 0.3s;
+}
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: #ff9a6c;
+}
+.nav ul li .taobao-link {
+    color: #ff9a6c;
+    font-weight: bold;
+}
+.nav ul li .taobao-link:hover {
+    color: #ff7a45;
+}
+@media (max-width: 768px) {
+    .nav ul {
+        gap: 15px;
+        font-size: 14px;
+    }
+    .nav .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* 单页应用页面切换 */
+.page-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 200px);
+}
+.page {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+}
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    position: relative;
+}
+.page.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.page.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* 无图版Banner样式（纯CSS色块） */
+.banner {
+    width: 100%;
+    height: 600px;
+    background-color: #ff9a6c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.banner .banner-text {
+    text-align: center;
+}
+.banner .banner-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.banner .banner-text p {
+    font-size: 24px;
+    opacity: 0.9;
+}
+
+/* 首页产品优势（纯CSS图标） */
+.advantage {
+    padding: 50px 0;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+.advantage h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+}
+.advantage h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff9a6c;
+    margin: 10px auto;
+}
+.advantage .advantage-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.advantage .advantage-item {
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}
+.advantage .icon-box {
+    width: 100px;
+    height: 100px;
+    background-color: #ffead8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 36px;
+    color: #ff9a6c;
+}
+.advantage .advantage-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+.advantage .advantage-item p {
+    color: #888;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .advantage .advantage-item {
+        width: 100%;
+    }
+}
+
+/* 产品详情页样式（无图版） */
+.product-detail {
+    padding: 50px 0;
+    background-color: #fff;
+}
+.product-detail .detail-wrap {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.product-detail .detail-img {
+    width: 45%;
+    height: 500px;
+    background-color: #ffead8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff9a6c;
+    font-size: 24px;
+}
+.product-detail .detail-text {
+    width: 50%;
+}
+.product-detail .detail-text h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.product-detail .detail-text .subtitle {
+    color: #ff9a6c;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.product-detail .detail-text .spec {
+    margin: 20px 0;
+    line-height: 2;
+}
+.product-detail .detail-text .spec li {
+    border-bottom: 1px dashed #eee;
+    padding: 10px 0;
+}
+.product-detail .detail-text .spec li span {
+    display: inline-block;
+    width: 100px;
+    color: #888;
+}
+@media (max-width: 768px) {
+    .product-detail .detail-img,
+    .product-detail .detail-text {
+        width: 100%;
+    }
+}
+
+/* 关于我们/联系方式样式 */
+.about, .contact {
+    padding: 50px 0;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+.about h2, .contact h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+}
+.about h2::after, .contact h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff9a6c;
+    margin: 10px auto;
+}
+.about p, .contact p {
+    line-height: 2;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.contact .contact-list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.contact .contact-item {
+    text-align: center;
+    width: 200px;
+}
+.contact .contact-item .icon-box {
+    width: 64px;
+    height: 64px;
+    background-color: #ffead8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 24px;
+    color: #ff9a6c;
+}
+@media (max-width: 768px) {
+    .contact .contact-item {
+        width: 100%;
+    }
+}
+
+/* 底部样式 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+.footer p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.footer .wechat {
+    font-size: 18px;
+    color: #ff9a6c;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.footer .taobao-link {
+    color: #ff9a6c;
+    margin: 10px 0;
+    display: inline-block;
+}
+.footer .taobao-link:hover {
+    text-decoration: underline;
+}
+
+/* 回到顶部按钮 */
+.back-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff9a6c;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+}

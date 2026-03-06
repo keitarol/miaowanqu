@@ -1,0 +1,33 @@
+/* 消除浏览器默认样式，保证多端一致 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "微软雅黑", "Microsoft YaHei", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f7f5; /* 浅奶油色背景，贴合宠物调性 */
+}
+ul, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto; /* 内容居中 */
+}
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
